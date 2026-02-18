@@ -1,19 +1,28 @@
-public class UseCase3PalindromeCheckerApp {
+import java.util.Stack;
+
+public class UseCase5PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // Step 1: Declare and initialize original string
-        String originalString = "radar";
+        // Original String
+        String originalString = "madam";
 
-        // Step 2: Create an empty string to store reversed value
-        String reversedString = "";
+        // Create Stack of Characters
+        Stack<Character> stack = new Stack<>();
 
-        // Step 3: Reverse the string using for loop
-        for (int i = originalString.length() - 1; i >= 0; i--) {
-            reversedString = reversedString + originalString.charAt(i);
+        // Step 1: Push each character into stack
+        for (int i = 0; i < originalString.length(); i++) {
+            stack.push(originalString.charAt(i));
         }
 
-        // Step 4: Compare original and reversed string using equals()
+        // Step 2: Pop characters and build reversed string
+        String reversedString = "";
+
+        while (!stack.isEmpty()) {
+            reversedString = reversedString + stack.pop();
+        }
+
+        // Step 3: Compare original and reversed string
         if (originalString.equals(reversedString)) {
             System.out.println("The given string \"" + originalString + "\" is a Palindrome.");
         } else {
@@ -23,3 +32,4 @@ public class UseCase3PalindromeCheckerApp {
         // Program exits
     }
 }
+
