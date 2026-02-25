@@ -1,25 +1,30 @@
+package PalindromeCheckerApp;
+
+import java.util.Scanner;
+
 public class UseCase3PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // Step 1: Declare and initialize original string
-        String originalString = "radar";
+        Scanner scanner = new Scanner(System.in);
 
-        // Step 2: Create an empty string to store reversed value
+        System.out.println("=== Palindrome Checker App (UC3 - String Reverse) ===");
+        System.out.print("Enter a string: ");
+        String originalString = scanner.nextLine();
+
+        // Reverse the string using loop
         String reversedString = "";
-
-        // Step 3: Reverse the string using for loop
         for (int i = originalString.length() - 1; i >= 0; i--) {
             reversedString = reversedString + originalString.charAt(i);
         }
 
-        // Step 4: Compare original and reversed string using equals()
+        // Compare original and reversed string
         if (originalString.equals(reversedString)) {
-            System.out.println("The given string \"" + originalString + "\" is a Palindrome.");
+            System.out.println("Result: The given string is a Palindrome.");
         } else {
-            System.out.println("The given string \"" + originalString + "\" is NOT a Palindrome.");
+            System.out.println("Result: The given string is NOT a Palindrome.");
         }
 
-        // Program exits
+        scanner.close();
     }
 }
